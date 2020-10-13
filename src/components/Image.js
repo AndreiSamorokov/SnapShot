@@ -1,11 +1,20 @@
 import React from "react";
 
-const Image = ({ url, title }) => (
-  <li>
-    <a href={url}>
+const Image = ({ url, title }) => {
+
+  const updateSelcted = e => {
+    console.log( e.target.src );
+  }
+
+  return(
+    <li>
+    <div
+      onClick = {updateSelcted}
+    >
       <img src={url} alt={title} />
-    </a>
+    </div>
   </li>
-);
+  );  
+}
 
 export default Image;
