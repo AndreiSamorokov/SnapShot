@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react"; 
 
 const Image = ({ url, title }) => {
 
+  const [selectedImg, setSelectedImg] = useState("");
+
+  const openModal = ()=> {
+    // console.log(selectedImg)
+  }
+
   const updateSelcted = e => {
-    console.log( e.target.src );
+    let m = e.target.src.toString().match(/.*\/(.+?)\./);
+    if (m && m.length > 1)
+    {
+      m = m[1];
+    }else{
+      m = '';
+    }
+
+    setSelectedImg( m )
+    openModal()
   }
 
   return(
@@ -11,6 +26,7 @@ const Image = ({ url, title }) => {
     <div
       onClick = {updateSelcted}
     >
+      <div>{ selectedImg }</div>
       <img src={url} alt={title} />
     </div>
   </li>
