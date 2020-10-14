@@ -233,8 +233,12 @@ input {
 .modal{
   position: fixed;
   width: 80%; 
-  top: 200px;
+  top: 50px;
   left: 10%;
   background: rebeccapurple;
   text-align: center;
+}
+
+.modal img{
+  width: 95%;
 }
