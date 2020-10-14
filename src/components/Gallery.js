@@ -33,7 +33,7 @@ const Gallery = props => {
     <div>
       <ul>{images}</ul>
       {noImages}
-      { selectedImg ? <Modal onSelecImage={handleImage}/> : ""}
+      { selectedImg ? <Modal img={selectedImg} onSelecImage={handleImage}/> : ""}
     </div>
   );
 };

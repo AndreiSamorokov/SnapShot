@@ -8,9 +8,11 @@ const Modal = ({ img, onSelecImage }) => {
 
     return (
         <div className="modal">
+            
             <button onClick = { closeModal } >
                 Close Modal
             </button>
+            <img src={img} />
         </div>
       );
 
