@@ -6,8 +6,7 @@ import Image from "./Image";
 import Modal from "./Modal";
 
 const Container = ({ searchTerm }) => {
-  const { images, loading, runSearch } = useContext(PhotoContext);
-  const { selectedImg } = useContext(Image);
+  const { images, loading, runSearch } = useContext(PhotoContext); 
 
   useEffect(() => {
     runSearch(searchTerm);
@@ -16,8 +15,7 @@ const Container = ({ searchTerm }) => {
 
   return (
     <div className="photo-container">
-      {loading ? <Loader /> : <Gallery data={images} />}
-      { selectedImg ? <Modal /> : "" }
+      {loading ? <Loader /> : <Gallery data={images} />} 
     </div>
   );
 };

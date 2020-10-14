@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
 const Gallery = props => {
   const results = props.data;
   let images;
   let noImages;
+ 
+ 
+  const [selectedImg, setSelectedImg] = useState(""); 
+
+  const handleImage = img => {
+    setSelectedImg( img );
+    console.log( img );
+  }
+
   // map variables to each item in fetched image array and return image component
   if (results.length > 0) {
     images = results.map(image => {
@@ -14,7 +23,7 @@ const Gallery = props => {
       let secret = image.secret;
       let title = image.title;
       let url = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`;
-      return <Image url={url} key={id} alt={title} />;
+      return <Image url={url} key={id} alt={title} onSelecImage={handleImage}/>;
     });
   } else {
     noImages = <NoImages />; // return 'not found' component if no images fetched
