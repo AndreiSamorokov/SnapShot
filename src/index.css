@@ -187,11 +187,7 @@ input {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  body {
-    padding-top: 4em;
-  }
-
+@media only screen and (min-width: 768px) { 
   .container {
     max-width: 960px;
     margin: auto;

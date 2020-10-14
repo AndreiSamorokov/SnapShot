@@ -12,7 +12,7 @@ const Gallery = props => {
   const [selectedImg, setSelectedImg] = useState(""); 
 
   const handleImage = img => {
-    setSelectedImg( img );
+    setSelectedImg( img ); 
   }
 
   // map variables to each item in fetched image array and return image component
@@ -33,7 +33,7 @@ const Gallery = props => {
     <div>
       <ul>{images}</ul>
       {noImages}
-      { selectedImg ? <Modal /> : "error "}
+      { selectedImg ? <Modal onSelecImage={handleImage}/> : ""}
     </div>
   );
 };

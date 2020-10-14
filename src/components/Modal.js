@@ -1,11 +1,20 @@
-import React from "react"; 
+import React, { useState } from "react"; 
 
-const Modal = ( img ) => {
+const Modal = ({ img, onSelecImage }) => {
+
+    const closeModal = () => {
+        onSelecImage('');
+    }
+
     return (
         <div className="modal">
-            This is modal area
+            <button onClick = { closeModal } >
+                Close Modal
+            </button>
         </div>
       );
+
+  
 }
 
 export default Modal
