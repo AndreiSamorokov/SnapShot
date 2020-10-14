@@ -1,12 +1,8 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";  
 
 const Image = ({ url, title }) => {
 
-  const [selectedImg, setSelectedImg] = useState("");
-
-  const openModal = ()=> {
-    // console.log(selectedImg)
-  }
+  const [selectedImg, setSelectedImg] = useState(""); 
 
   const updateSelcted = e => {
     let m = e.target.src.toString().match(/.*\/(.+?)\./);
@@ -16,9 +12,9 @@ const Image = ({ url, title }) => {
     }else{
       m = '';
     }
+    setSelectedImg( m ) 
 
-    setSelectedImg( m )
-    openModal()
+    
   }
 
   return(
