@@ -233,3 +233,12 @@ input {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
   }
 }
+
+.modal{
+  position: fixed;
+  width: 80%; 
+  top: 200px;
+  left: 10%;
+  background: rebeccapurple;
+  text-align: center;
+}

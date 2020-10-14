@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import NoImages from "./NoImages";
 import Image from "./Image";
+import Modal from "./Modal";
+
 const Gallery = props => {
   const results = props.data;
   let images;
@@ -11,7 +13,6 @@ const Gallery = props => {
 
   const handleImage = img => {
     setSelectedImg( img );
-    console.log( img );
   }
 
   // map variables to each item in fetched image array and return image component
@@ -32,6 +33,7 @@ const Gallery = props => {
     <div>
       <ul>{images}</ul>
       {noImages}
+      { selectedImg ? <Modal /> : "error "}
     </div>
   );
 };
